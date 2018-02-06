@@ -1,0 +1,12 @@
+.login-register {
+  input {
+    color: #2a2a2a;
+    border-bottom: 1px solid lighten(#26a69a, 10%) !important;
+    &.invalid {
+      border-bottom: none !important;
+    }
+    &.invalid:focus {
+      border-bottom: 1px solid #F44336 !important;
+    }
+  }
+}

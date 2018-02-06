@@ -1,0 +1,27 @@
+.nav-wrapper {
+  .dtb-hover {
+    position: relative;
+  }
+}
+
+
+
+.dtb-hover:before {
+  content: '';
+  position: absolute;
+  background-color: transparent;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  transition: background-color .3s ease-in;
+}
+
+.dtb-hover:hover {
+  background-color: transparent;
+  &::before {
+    background-color: #2bbbad;
+    transition: background-color .1s ease-in;
+}
+}
+

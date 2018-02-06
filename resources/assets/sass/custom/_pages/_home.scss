@@ -1,0 +1,65 @@
+.dtb-home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1rem;
+  min-height: calc(100vh - 134px);
+
+  .dtb-home-landing {
+    border-radius: 3px;
+    background-color: rgba(0,0,0,.5);
+    padding: 10px;
+    width: 70%;
+    @media #{$medium-and-down} {
+      width: 85%;
+    }
+
+    @media #{$small-and-down} {
+      width: 95%;
+    }
+  }
+
+  h2 {
+    margin-top: 3rem;
+
+    @media #{$medium-and-down} {
+      font-size: 2.56rem;
+    }
+
+    @media #{$small-and-down} {
+      font-size: 1.56rem;
+      margin-top: 4rem;
+    }
+  }
+
+  .home-cta {
+    margin-top: 8rem;
+    display: flex;
+    justify-content: center;
+
+    @media(max-width: 650px) {
+      margin-top: 2rem;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .btn {
+     text-transform: lowercase;
+      @media (max-width: 650px) {
+        width: 60%;
+      }
+      @media(max-width: 370px) {
+        width: 100%;
+      }
+    }
+
+    .btn:not([first-child]) {
+      margin-left: 10px;
+
+      @media (max-width: 650px) {
+        margin: 0 0 10px 0;
+      }
+    }
+
+  }
+}

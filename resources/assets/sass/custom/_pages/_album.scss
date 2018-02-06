@@ -1,0 +1,55 @@
+.dtb-single-album {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  figure {
+    margin: 0 auto;
+    text-align: center;
+    width: 33%;
+    padding: 10px;
+    @media (max-width: 850px) {
+      width: 50%;
+    }
+    @media (max-width: 600px) {
+      width: 100%;
+    }
+
+    img {
+      display: inline-block;
+      max-width: 100%;
+    }
+
+    figcaption {
+      font-style: italic;
+      color: #2a2a2a;
+    }
+  }
+
+  .card .card-content {
+    padding: 12px;
+  }
+
+}
+
+.dtb-album-video {
+  padding: 15px;
+  margin: 0 auto;
+  width: 60%;
+  @media (max-width: 850px) {
+    width: 80%;
+  }
+  @media (max-width: 600px) {
+    width: 100%;
+  }
+}
+
+.dtb-gallery-description {
+  padding: 0 12px;
+}
+
+.dtb-album-title {
+  padding-top: 25px;
+  border-top: 1px dotted;
+  margin: 30px 20px 10px;
+}

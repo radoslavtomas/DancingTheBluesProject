@@ -1,0 +1,30 @@
+.dtb-single {
+  .dtb-header-gallery {
+    background-image: linear-gradient(45deg, #28094a 15%, #673ab7 85%);
+
+    h5 {
+      border-top: 2px solid lighten(#673ab7, 10%);
+      border-bottom: 2px solid lighten(#673ab7, 10%);
+    }
+  }
+
+  .gallery-list-item {
+    margin: 1rem auto 0 auto;
+    padding: 1rem;
+    width: 80%;
+    text-align: center;
+    border-top: 1px dotted;
+
+    h6 {
+      span {
+        text-transform: uppercase;
+      }
+    }
+
+    a {
+      text-transform: uppercase;
+      background-color: lighten(#f06292, 5%);
+      background-image: linear-gradient(45deg, #28094a 15%, #673ab7 85%);
+    }
+  }
+}

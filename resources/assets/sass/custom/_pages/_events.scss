@@ -1,0 +1,31 @@
+.dtb-single {
+  .dtb-header-events {
+    background-color: #f06292;
+    background-image: linear-gradient(45deg, #b649bd 15%, #f279a2 85%);
+
+    h5 {
+      border-top: 2px solid lighten(#f06292, 10%);
+      border-bottom: 2px solid lighten(#f06292, 10%);
+    }
+  }
+
+  .event-list-item {
+    margin: 1rem auto 0 auto;
+    padding: 1rem;
+    width: 80%;
+    text-align: center;
+    border-top: 1px dotted;
+
+    h6 {
+      span {
+        text-transform: uppercase;
+      }
+    }
+
+    a {
+      text-transform: uppercase;
+      background-color: lighten(#f06292, 5%);
+      background-image: linear-gradient(45deg, #b649bd 15%, #f279a2 85%);
+    }
+  }
+}

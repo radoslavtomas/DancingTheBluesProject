@@ -1,0 +1,31 @@
+.dtb-single {
+  .dtb-header-blog {
+    background-color: #2bbbad;
+    background-image: linear-gradient(45deg, #21686f 15%, #2bbbad 85%);
+
+    h5 {
+      border-top: 2px solid lighten(#2bbbad, 10%);
+      border-bottom: 2px solid lighten(#2bbbad, 10%);
+    }
+  }
+
+  .blog-list-item {
+    margin: 1rem auto 0 auto;
+    padding: 1rem;
+    width: 80%;
+    text-align: center;
+    border-top: 1px dotted;
+
+    h6 {
+      span {
+        text-transform: uppercase;
+      }
+    }
+
+    .btn {
+      text-transform: uppercase;
+      background-color: lighten(#2bbbad, 5%);
+      background-image: linear-gradient(45deg, #21686f 15%, #2bbbad 85%);
+    }
+  }
+}

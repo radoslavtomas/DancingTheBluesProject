@@ -14,7 +14,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <style>
         body {
-            background: url("{{ asset('img/bg.jpg') }}") center center no-repeat;
+            background: url("{{ Voyager::image( setting('home.background') ) }}") center center no-repeat;
             background-size: cover;
             background-attachment: fixed;
         }
@@ -26,7 +26,7 @@
 
     <nav>
         <div class="nav-wrapper">
-            <a href="{{ route('home') }}" class="brand-logo is-apple m-l-15">{{ setting('site.title') }}</a>
+            <a href="{{ route('home') }}" class="brand-logo is-apple m-l-15">{{ str_replace(' ', '', setting('site.title')) }}</a>
             <a href="#" data-activates="mobile-menu" class="button-collapse"><i class="fa fa-bars"></i></a>
             <ul class="right hide-on-med-and-down">
                 <li><a class="dtb-hover" href="{{ route('home') }}">Home</a></li>
@@ -90,14 +90,24 @@
 
     </div>
 
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-113616813-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', '{{ setting('site.google_analytics_tracking_id') }}');
+</script>
+
+
 <!-- Scripts -->
 <script src="{{ asset('js/app.js') }}"></script>
-@yield('scripts')
 <script>
     @if(Session::has('success'))
     Materialize.toast("{{ Session::get('success') }}", 4000, 'green lighten-3 blue-grey-text text-darken-4');
     @endif
 </script>
-
+@yield('scripts')
 </body>
 </html>

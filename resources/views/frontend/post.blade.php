@@ -48,3 +48,8 @@
     <meta name="description" content="{{ $post->meta_description }}">
     <meta name="keywords" content="{{ $post->meta_keywords }}">
 @stop
+
+@section('scripts')
+    <!--AddThis widget-->
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5a79ccfc1ecbefbd"></script>
+@endsection

@@ -69,6 +69,8 @@
 
 @section('scripts')
     <script src="{{ asset('js/lightbox2/dist/js/lightbox.js') }}"></script>
+    <!--AddThis widget-->
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5a79ccfc1ecbefbd"></script>
 @stop
 
 @section('meta')

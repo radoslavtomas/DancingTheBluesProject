@@ -58,7 +58,7 @@ class FrontEndController extends Controller
 
 	public function events()
 	{
-		$events = Event::latest()->get();
+		$events = Event::latest()->paginate(setting('site.pagination'));
 		return view('frontend.events')
 			->with('events', $events);
 	}
@@ -72,8 +72,7 @@ class FrontEndController extends Controller
 
 	public function blog()
 	{
-		$posts = Post::latest()->get();
-//		dd($posts);
+		$posts = Post::latest()->paginate(setting('site.pagination'));
 		return view('frontend.blog')
 			->with('posts', $posts);
 	}
@@ -87,7 +86,7 @@ class FrontEndController extends Controller
 
 	public function gallery()
 	{
-		$albums = Album::latest()->get();
+		$albums = Album::latest()->paginate(setting('site.pagination'));
 		return view('frontend.gallery')
 			->with('albums', $albums);
 	}

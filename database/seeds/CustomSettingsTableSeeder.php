@@ -60,6 +60,18 @@ class CustomSettingsTableSeeder extends Seeder
 			])->save();
 		}
 
+		$setting = $this->findSetting('site.pagination');
+		if (!$setting->exists) {
+			$setting->fill([
+				'display_name' => 'Pagination (number)',
+				'value'        => '5',
+				'details'      => '',
+				'type'         => 'text',
+				'order'        => 6,
+				'group'        => 'Site',
+			])->save();
+		}
+
 		$setting = $this->findSetting('site.email');
 		if (!$setting->exists) {
 			$setting->fill([

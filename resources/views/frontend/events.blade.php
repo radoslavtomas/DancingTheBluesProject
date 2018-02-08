@@ -18,6 +18,10 @@
                 </div>
             @endforeach
         </main>
+
+        <footer>
+            {{ $events->links() }}
+        </footer>
     </div>
 
 

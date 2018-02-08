@@ -19,6 +19,10 @@
             @endforeach
         </main>
 
+        <footer>
+            {{ $albums->links() }}
+        </footer>
+
     </div>
 
 

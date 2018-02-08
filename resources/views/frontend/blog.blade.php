@@ -18,6 +18,10 @@
                 </div>
             @endforeach
         </main>
+
+        <footer>
+            {{ $posts->links() }}
+        </footer>
     </div>
 @endsection
 
@@ -26,3 +30,26 @@
     <meta name="description" content="{{ setting('site.description') }}">
     <meta name="keywords" content="{{ setting('site.keywords') }}">
 @stop
+
+@section('styles')
+    <style>
+        /*.pagination li.active {*/
+            /*background-color: rgba(0,0,0,.2);*/
+        /*}*/
+        /*.pagination li span {*/
+            /*color: #444;*/
+            /*display: inline-block;*/
+            /*font-size: 1.2rem;*/
+            /*padding: 0 10px;*/
+            /*line-height: 30px;*/
+        /*}*/
+
+        /*.pagination li:first-child span,*/
+        /*.pagination li:last-child span,*/
+        /*.pagination li:first-child a,*/
+        /*.pagination li:last-child a {*/
+            /*padding: 0;*/
+            /*line-height: 27px;*/
+        /*}*/
+    </style>
+@endsection

@@ -58,9 +58,15 @@
                 <div class="row m-t-40">
                     <div class="col s6 offset-s3">
                         <div class="row">
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a class="m-l-10" href="#"><i class="fa fa-twitter"></i></a>
-                            <a class="m-l-10" href="#"><i class="fa fa-instagram"></i></a>
+                            @if(setting('social.facebook') !== null)
+                            <a href="{{ setting('social.facebook') }}"><i class="fa fa-facebook"></i></a>
+                            @endif
+                            @if(setting('social.twitter') !== null)
+                            <a class="m-l-10" href="{{ setting('social.twitter') }}"><i class="fa fa-twitter"></i></a>
+                            @endif
+                            @if(setting('social.instagram') !== null)
+                            <a class="m-l-10" href="{{ setting('social.instagram') }}"><i class="fa fa-instagram"></i></a>
+                            @endif
                         </div>
                     </div>
                 </div>

@@ -8,15 +8,21 @@
         </header>
 
         <main>
-            @foreach($albums as $album)
-                <div class="gallery-list-item">
-                    <a href="{{ route('album', $album->slug) }}"><h5>{{ $album->name }}</h5></a>
-                    <p>{!! $album->description !!}</p>
-                    <div class="dtb-cover-album" style="background: url('{{ Voyager::image($album->cover_image) }}') center center no-repeat;
-                    background-size: cover;"></div>
-                    <a class="btn" href="{{ route('album', $album->slug) }}">more<i class="fa fa-hand-o-right m-l-10"></i></a>
+            @if(count($albums) > 0)
+                @foreach($albums as $album)
+                    <div class="gallery-list-item">
+                        <a href="{{ route('album', $album->slug) }}"><h5>{{ $album->name }}</h5></a>
+                        <p>{!! $album->description !!}</p>
+                        <div class="dtb-cover-album" style="background: url('{{ Voyager::image($album->cover_image) }}') center center no-repeat;
+                        background-size: cover;"></div>
+                        <a class="btn" href="{{ route('album', $album->slug) }}">more<i class="fa fa-hand-o-right m-l-10"></i></a>
+                    </div>
+                @endforeach
+            @else
+                <div class="center-align">
+                    <p>There are no albums yet, coming soon...</p>
                 </div>
-            @endforeach
+            @endif
         </main>
 
         <footer>

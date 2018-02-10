@@ -11,26 +11,30 @@
             {!! $album->description !!}
         </div>
 
-        <h4 class="centre-align dtb-album-title">Pictures</h4>
+        @if(count($images) > 0)
 
-        <div class="dtb-single-album">
+            <h4 class="centre-align dtb-album-title">Pictures</h4>
 
-            @foreach($pictures as $picture)
-                <figure class="dtb-album-img">
-                    <div class="card grey lighten-3">
-                        <div class="card">
-                            <div class="card-content">
-                                <a href="{{ Voyager::image($picture->image) }}" data-lightbox="gallery" data-title="{{ $picture->description }}">
-                                    <img src="{{ Voyager::image($picture->image) }}" alt="{{ $picture->description }}" />
-                                    <figcaption>{{ $picture->description }}</figcaption>
-                                </a>
+            <div class="dtb-single-album">
+
+                @foreach($images as $image)
+                    <figure class="dtb-album-img">
+                        <div class="card grey lighten-3">
+                            <div class="card">
+                                <div class="card-content">
+                                    <a href="{{ Voyager::image($image) }}" data-lightbox="gallery">
+                                        <img src="{{ Voyager::image($image) }}" alt="{{ $album->description }}" />
+                                        {{--<figcaption>{{ $album->description }}</figcaption>--}}
+                                    </a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </figure>
-            @endforeach
+                    </figure>
+                @endforeach
 
-        </div>
+            </div>
+
+        @endif
 
         @if(!count($videos) == 0)
             <h4 class="centre-align dtb-album-title">Videos</h4>
@@ -62,9 +66,6 @@
 
 @section('styles')
     <link href="{{ asset('js/lightbox2/dist/css/lightbox.min.css') }}" rel="stylesheet">
-    <style>
-
-    </style>
 @endsection
 
 @section('scripts')

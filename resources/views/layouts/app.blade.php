@@ -48,9 +48,6 @@
             </ul>
             <ul class="side-nav" id="mobile-menu">
                 <li><div class="user-view">
-                        {{--<div class="background">--}}
-                            {{--<img src="{{ asset('img/tree.jpg') }}">--}}
-                        {{--</div>--}}
                         <p class="m-b-15">{{ setting('site.title') }}</p>
                     </div></li>
                 <li class="m-t-20"><a href="{{ route('home') }}">Home</a></li>
@@ -81,9 +78,15 @@
         <div class="footer-copyright">
             <div class="container">
                 © 2018 {{ setting('site.title') }}
-                <a class="grey-text text-lighten-4 right right" href="#"><i class="fa fa-facebook"></i></a>
-                <a class="grey-text text-lighten-4 right right m-r-10" href="#"><i class="fa fa-twitter"></i></a>
-                <a class="grey-text text-lighten-4 right right m-r-10" href="#"><i class="fa fa-instagram"></i></a>
+                @if(setting('social.facebook') !== null)
+                <a class="grey-text text-lighten-4 right right" href="{{ setting('social.facebook') }}"><i class="fa fa-facebook"></i></a>
+                @endif
+                @if(setting('social.twitter') !== null)
+                <a class="grey-text text-lighten-4 right right m-r-10" href="{{ setting('social.twitter') }}"><i class="fa fa-twitter"></i></a>
+                @endif
+                @if(setting('social.instagram') !== null)
+                <a class="grey-text text-lighten-4 right right m-r-10" href="{{ setting('social.instagram') }}"><i class="fa fa-instagram"></i></a>
+                @endif
             </div>
         </div>
     </footer>

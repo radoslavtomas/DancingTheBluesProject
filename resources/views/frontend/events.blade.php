@@ -8,15 +8,21 @@
         </header>
 
         <main>
-            @foreach($events as $event)
-                <div class="event-list-item">
-                    <a href="{{ route('event', $event->slug) }}"><h5>{{ $event->title }}</h5></a>
-                    <h6>{{ $event->start_date }} @if($event->end_date) - {{ $event->end_date }}@endif</h6>
-                    <p><em>{{ $event->venue }}</em></p>
-                    <p>{{ $event->excerpt }}</p>
-                    <a class="btn" href="{{ route('event', $event->slug) }}">more<i class="fa fa-hand-o-right m-l-10"></i></a>
+            @if(count($events) > 0)
+                @foreach($events as $event)
+                    <div class="event-list-item">
+                        <a href="{{ route('event', $event->slug) }}"><h5>{{ $event->title }}</h5></a>
+                        <h6>{{ $event->start_date }} @if($event->end_date) - {{ $event->end_date }}@endif</h6>
+                        <p><em>{{ $event->venue }}</em></p>
+                        <p>{{ $event->excerpt }}</p>
+                        <a class="btn" href="{{ route('event', $event->slug) }}">more<i class="fa fa-hand-o-right m-l-10"></i></a>
+                    </div>
+                @endforeach
+            @else
+                <div class="center-align">
+                    <p>There are no events yet, coming soon...</p>
                 </div>
-            @endforeach
+            @endif
         </main>
 
         <footer>

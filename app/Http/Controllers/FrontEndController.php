@@ -94,11 +94,13 @@ class FrontEndController extends Controller
 	public function album($slug)
 	{
 		$album = Album::where('slug', $slug)->firstOrFail();
-		$pictures = $album->images;
+		$images_string = $album->images->first()->images;
+		$images = json_decode($images_string, true);
 		$videos = $album->videos;
+
 		return view('frontend.album')
 			->with('album', $album)
-			->with('pictures', $pictures)
+			->with('images', $images)
 			->with('videos', $videos);
 	}
 

@@ -8,15 +8,21 @@
         </header>
 
         <main>
-            @foreach($posts as $post)
-                <div class="blog-list-item">
-                    <h5><a href="{{ route('post', $post->slug) }}">{{ $post->title }}</a></h5>
-                    <h6>{{ $post->created_at }}</h6>
-                    <p>by <em>{{ $post->author['name'] }}</em></p>
-                    <p>{{ $post->excerpt }}</p>
-                    <a class="btn" href="{{ route('post', $post->slug) }}">read more</a>
+            @if(count($posts) > 0)
+                @foreach($posts as $post)
+                    <div class="blog-list-item">
+                        <h5><a href="{{ route('post', $post->slug) }}">{{ $post->title }}</a></h5>
+                        <h6>{{ $post->created_at }}</h6>
+                        <p>by <em>{{ $post->author['name'] }}</em></p>
+                        <p>{{ $post->excerpt }}</p>
+                        <a class="btn" href="{{ route('post', $post->slug) }}">read more</a>
+                    </div>
+                @endforeach
+            @else
+                <div class="center-align">
+                    <p>There are no pots yet, coming soon...</p>
                 </div>
-            @endforeach
+            @endif
         </main>
 
         <footer>
@@ -30,26 +36,3 @@
     <meta name="description" content="{{ setting('site.description') }}">
     <meta name="keywords" content="{{ setting('site.keywords') }}">
 @stop
-
-@section('styles')
-    <style>
-        /*.pagination li.active {*/
-            /*background-color: rgba(0,0,0,.2);*/
-        /*}*/
-        /*.pagination li span {*/
-            /*color: #444;*/
-            /*display: inline-block;*/
-            /*font-size: 1.2rem;*/
-            /*padding: 0 10px;*/
-            /*line-height: 30px;*/
-        /*}*/
-
-        /*.pagination li:first-child span,*/
-        /*.pagination li:last-child span,*/
-        /*.pagination li:first-child a,*/
-        /*.pagination li:last-child a {*/
-            /*padding: 0;*/
-            /*line-height: 27px;*/
-        /*}*/
-    </style>
-@endsection

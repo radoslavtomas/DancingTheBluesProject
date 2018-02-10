@@ -16,7 +16,7 @@ class CustomSettingsTableSeeder extends Seeder
 		if (!$setting->exists) {
 			$setting->fill([
 				'display_name' => 'Facebook',
-				'value'        => 'Facebook',
+				'value'        => '',
 				'details'      => '',
 				'type'         => 'text',
 				'order'        => 1,
@@ -28,7 +28,7 @@ class CustomSettingsTableSeeder extends Seeder
 		if (!$setting->exists) {
 			$setting->fill([
 				'display_name' => 'Twitter',
-				'value'        => 'Twitter',
+				'value'        => '',
 				'details'      => '',
 				'type'         => 'text',
 				'order'        => 2,
@@ -40,7 +40,7 @@ class CustomSettingsTableSeeder extends Seeder
 		if (!$setting->exists) {
 			$setting->fill([
 				'display_name' => 'Instagram',
-				'value'        => 'Instagram',
+				'value'        => '',
 				'details'      => '',
 				'type'         => 'text',
 				'order'        => 3,

@@ -51,7 +51,10 @@ class FrontEndController extends Controller
 
 	public function whoweare()
 	{
-		$users = User::all();
+		$users_all = User::all();
+		$users = $users_all->filter( function ($value, $key) {
+			return $value->email !== 'radoslav.tomas@gmail.com';
+		});
 		return view('frontend.information.whoweare')
 			->with('users', $users);
     }

@@ -42,13 +42,6 @@ class FrontEndController extends Controller
 			->with('page', $page);
 	}
 
-	public function resources()
-	{
-		$page = Page::where('slug', 'resources')->firstOrFail();
-		return view('frontend.single')
-			->with('page', $page);
-	}
-
 	public function whoweare()
 	{
 		$users_all = User::all();

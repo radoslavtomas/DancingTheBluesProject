@@ -38,7 +38,6 @@
                     <li><a href="{{ route('whoweare') }}">Who we are</a></li>
                     <li><a href="{{ route('structure') }}">Structure</a></li>
                     <li><a href="{{ route('funding') }}">Funding</a></li>
-                    <li><a href="{{ route('resources') }}">Resources</a></li>
                 </ul>
 
                 <li><a class="dtb-hover" href="{{ route('events') }}">Events</a></li>
@@ -59,7 +58,6 @@
                     <li><a href="{{ route('whoweare') }}">Who we are</a></li>
                     <li><a href="{{ route('structure') }}">Structure</a></li>
                     <li><a href="{{ route('funding') }}">Funding</a></li>
-                    <li><a href="{{ route('resources') }}">Resources</a></li>
                 </ul>
 
                 <li><a href="{{ route('events') }}">Events</a></li>

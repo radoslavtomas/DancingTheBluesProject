@@ -70,6 +70,12 @@
                         </div>
                     </div>
                 </div>
+
+                {{--MAP--}}
+                <div class="video-container">
+                    {!! setting('site.contact_map') !!}
+                </div>
+
             </div>
         </main>
     </div>

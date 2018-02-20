@@ -15,7 +15,6 @@ Route::get('/', 'FrontEndController@home')->name('home');
 Route::get('/project', 'FrontEndController@project')->name('project');
 Route::get('/structure', 'FrontEndController@structure')->name('structure');
 Route::get('/funding', 'FrontEndController@funding')->name('funding');
-Route::get('/resources', 'FrontEndController@resources')->name('resources');
 Route::get('/whoweare', 'FrontEndController@whoweare')->name('whoweare');
 Route::get('/events', 'FrontEndController@events')->name('events');
 Route::get('/event/{slug}', 'FrontEndController@event')->name('event');

@@ -18,3 +18,34 @@ nav {
 .side-nav .user-view, .side-nav .userView {
   background-image: linear-gradient(45deg, #1ec7b2 15%, #d83be2 85%);
 }
+
+/* slick slider */
+
+.slider {
+  height: 300px;
+
+  .slick-prev:before, .slick-next:before {
+    color: black;
+  }
+
+  ul.slick-dots {
+    margin-left: 0;
+    bottom: -40px;
+  }
+}
+
+
+.slick-slide img {
+  margin: 0 auto;
+  max-height: 300px;
+  width: auto;
+}
+
+@media(max-width: 768px) {
+  .slick-slide img {
+    height: auto;
+    max-width: 100%;
+  }
+}
+
+

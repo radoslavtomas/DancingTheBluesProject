@@ -54,7 +54,29 @@
     <meta name="keywords" content="{{ $event->meta_keywords }}">
 @stop
 
+@section('styles')
+    <link rel="stylesheet" type="text/css" href="{{ asset('js/slick/slick.css' )}}"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('js/slick/slick-theme.css' )}}"/>
+@endsection
+
 @section('scripts')
     <!--AddThis widget-->
     <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5a79ccfc1ecbefbd"></script>
+    <script type="text/javascript" src="{{ asset('js/slick/slick.js' )}}"></script>
+    <script>
+        $('.slider').slick({
+            infinite: true,
+            dots: true,
+            autoplay: true,
+            responsive: [
+                {
+                    breakpoint: 768,
+                    settings: {
+                        arrows: false,
+                        centerMode: false
+                    }
+                }
+            ]
+        });
+    </script>
 @endsection

@@ -7,58 +7,63 @@
             <h5 class="is-apple">{{ $album->name }}</h5>
         </header>
 
-        <div class="dtb-gallery-description m-t-30">
-            {!! $album->description !!}
-        </div>
+        @if($images === null && count($videos) === 0)
+            <div style="padding: 100px 0; text-align: center;">There are no pictures or videos yet...</div>
+        @else
 
-        @if(count($images) > 0)
-
-            <h4 class="centre-align dtb-album-title">Pictures</h4>
-
-            <div class="dtb-single-album">
-
-                @foreach($images as $image)
-                    <figure class="dtb-album-img">
-                        <div class="card grey lighten-3">
-                            <div class="card">
-                                <div class="card-content">
-                                    <a href="{{ Voyager::image($image) }}" data-lightbox="gallery">
-                                        <img src="{{ Voyager::image($image) }}" alt="{{ $album->description }}" />
-                                        {{--<figcaption>{{ $album->description }}</figcaption>--}}
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </figure>
-                @endforeach
-
+            <div class="dtb-gallery-description m-t-30">
+                {!! $album->description !!}
             </div>
 
-        @endif
+            @if($images !== null)
 
-        @if(!count($videos) == 0)
-            <h4 class="centre-align dtb-album-title">Videos</h4>
+                <h4 class="centre-align dtb-album-title">Pictures</h4>
 
-            <div class="dtb-album-video">
+                <div class="dtb-single-album">
 
-                @foreach($videos as $video)
-                    <div class="row">
-                        <div class="col s12">
+                    @foreach($images as $image)
+                        <figure class="dtb-album-img">
                             <div class="card grey lighten-3">
-                                <div class="card-content">
-                                    <div class="video-container">
-                                        {!! $video->embed !!}
+                                <div class="card">
+                                    <div class="card-content">
+                                        <a href="{{ Voyager::image($image) }}" data-lightbox="gallery">
+                                            <img src="{{ Voyager::image($image) }}" alt="{{ $album->description }}" />
+                                            {{--<figcaption>{{ $album->description }}</figcaption>--}}
+                                        </a>
                                     </div>
                                 </div>
+                            </div>
+                        </figure>
+                    @endforeach
 
-                                <div class="card-action left-align">
-                                    {!! $video->description !!}
+                </div>
+
+            @endif
+
+            @if(!count($videos) == 0)
+                <h4 class="centre-align dtb-album-title">Videos</h4>
+
+                <div class="dtb-album-video">
+
+                    @foreach($videos as $video)
+                        <div class="row">
+                            <div class="col s12">
+                                <div class="card grey lighten-3">
+                                    <div class="card-content">
+                                        <div class="video-container">
+                                            {!! $video->embed !!}
+                                        </div>
+                                    </div>
+
+                                    <div class="card-action left-align">
+                                        {!! $video->description !!}
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                @endforeach
-            </div>
+                    @endforeach
+                </div>
+            @endif
         @endif
     </div>
 
